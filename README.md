@@ -1,4 +1,4 @@
-# DeepRaman
+# DeepSRS
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/yourusername/DeepRaman/ci.yml?branch=main)](https://github.com/yourusername/DeepRaman/actions)
@@ -9,7 +9,7 @@ A research project leveraging deep learning for **Stimulated Raman Scattering (S
 ---
 
 ## Table of Contents
-- [DeepRaman](#deepraman)
+- [DeepSRS](#deepsrs)
   - [Table of Contents](#table-of-contents)
   - [About the Project](#about-the-project)
   - [Features](#features)
@@ -46,7 +46,7 @@ Here, you can include an overview of:
 1. **Clone the repository**:
 
 ~~~~bash
-git clone https://github.com/3220111903bit/DeepRaman.git
+git clone https://github.com/RogueLiquid/DeepSRS.git
 cd DeepRaman
 ~~~~
 
@@ -70,7 +70,7 @@ pip install -r ResShift_requirements.txt
 ---
 
 ## Usage
-Provide instructions for how to run the primary scripts or functions of DeepRaman. For example:
+Provide instructions for how to run the primary scripts or functions of DeepSRS. For example:
 
 1. **Prepare your SRS data**:  
    - Organize your SRS data into a folder, the data format is tiff (ends with .tif).
