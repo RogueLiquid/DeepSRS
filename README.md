@@ -15,11 +15,8 @@ A research project leveraging deep learning for **Stimulated Raman Scattering (S
   - [Installation](#installation)
   - [Usage](#usage)
     - [1. Prepare your SRS data](#1-prepare-your-srs-data)
-    - [2. Download model weights](#2-download-model-weights)
-    - [3. Run inference](#3-run-inference)
-- [Run the autoencoder](#run-the-autoencoder)
-- [Run the ESRGAN](#run-the-esrgan)
-- [Run the ResShift](#run-the-resshift)
+    - [2. Run inference](#2-run-inference)
+    - [3. Run test cases from paper](#3-run-test-cases-from-paper)
   - [License](#license)
   - [References](#references)
   - [Contact](#contact)
@@ -72,6 +69,25 @@ pip install -r ESRGAN_requirements.txt
 pip install -r ResShift_requirements.txt
 ~~~~
 
+4. **Download weights**:
+
+Download the pretrained model weights from: [https://huggingface.co/datasets/RogueLiquid/DeepSRS]
+
+Organize the downloaded files as follows:
+
+autoencoder/
+  model/
+    best_autoencoder_model.pth
+
+ResShift/
+  weights/
+    autoencoder_vq_f4.pth
+    model_300.pth
+
+ESRGAN/
+  weights/
+    xxx.pth
+
 ---
 
 ## Usage
@@ -83,26 +99,7 @@ Follow the steps below to run the primary scripts or functions of DeepSRS.
 - Place your raw SRS data in a folder. The expected format is TIFF (.tif).
 - Place your processed image data in a folder. The expected format is PNG (.png).
 
-### 2. Download model weights
-
-Download the pretrained model weights from: [(https://huggingface.co/datasets/RogueLiquid/DeepSRS)]
-
-Organize the downloaded files as follows:
-
-autoencoder/
-├── model/
-│   └── best_autoencoder_model.pth
-
-ResShift/
-├── weights/
-│   ├── autoencoder_vq_f4.pth
-│   └── model_300.pth
-
-ESRGAN/
-├── weights/
-│   └── xxx.pth
-
-### 3. Run inference
+### 2. Run inference
 
 Use the following commands to perform super-resolution:
 
@@ -115,6 +112,22 @@ python run_ESRGAN.py --input <input_image_folder> --output <output_image_folder>
 
 # Run the ResShift
 python run_ResShift.py --input <input_image_folder> --output <output_image_folder>
+```
+
+### 3. Run test cases from paper
+
+When run the test cases, please make sure you are in the DeepSRS folder.
+
+```bash
+# Run the autoencoder
+python run_autoencoder.py --input <input_tiff_folder> --output <output_tiff_folder>
+
+# Run the ESRGAN
+python run_ESRGAN.py --input <input_image_folder> --output <output_image_folder>
+
+# Run the ResShift
+python run_ResShift.py --input <input_image_folder> --output <output_image_folder>
+```
 
 ---
 
