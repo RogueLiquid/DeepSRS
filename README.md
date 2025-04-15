@@ -87,7 +87,7 @@ ResShift/
 
 ESRGAN/
   weights/
-    xxx.pth
+    net_g_800.pth
 ```
 
 ---
@@ -107,13 +107,13 @@ Use the following commands to perform super-resolution:
 
 ```bash
 # Run the autoencoder
-python run_autoencoder.py --tiff_input_path <input_tiff_folder> --output_path <output_tiff_folder> --model_path
+python run_autoencoder.py --tiff_input_path <input_tiff_folder> --output_path <output_tiff_folder> --model_path ./autoencoder/model/best_autoencoder_model.pth
 
 # Run the ESRGAN
-python run_ESRGAN.py --in_path <input_image_folder> --out_path <output_image_folder>
+python run_ESRGAN.py --input <input_image_folder> --output <output_image_folder>
 
 # Run the ResShift
-python run_ResShift.py --input <input_image_folder> --output <output_image_folder>
+python run_ResShift.py --in_path <input_image_folder> --out_path <output_image_folder>
 ```
 
 ### 3. Run test cases from paper
@@ -122,20 +122,19 @@ When run the test cases, please make sure you are in the DeepSRS folder.
 
 ```bash
 # Run the autoencoder
-python run_autoencoder.py --tiff_input_path <input_tiff_folder> --output_path <output_tiff_folder> --model_path
+python run_autoencoder.py --tiff_input_path <input_tiff_folder> --output_path <output_tiff_folder> --model_path ./autoencoder/model/best_autoencoder_model.pth
 
 # Run the ESRGAN
-python run_ESRGAN.py --in_path <input_image_folder> --out_path <output_image_folder>
+python run_ESRGAN.py --input <input_image_folder> --output <output_image_folder>
 
 # Run the ResShift
-python run_ResShift.py --input test_data --output test_output
+python run_ResShift.py --in_path <input_image_folder> --out_path <output_image_folder>
 ```
 
 ---
 
 ## License
 This project is licensed under the [MIT License](LICENSE).  
-Feel free to add or modify license information as needed.
 
 ---
 
