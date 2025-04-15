@@ -1,7 +1,7 @@
 # DeepSRS
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/yourusername/DeepRaman/ci.yml?branch=main)](https://github.com/yourusername/DeepRaman/actions)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/RogueLiquid/DeepRaman/ci.yml?branch=main)](https://github.com/RogueLiquid/DeepRaman/actions)
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-green.svg)](https://www.python.org/downloads/)
 
 A research project leveraging deep learning for **Stimulated Raman Scattering (SRS) super-resolution**. DeepRaman aims to push the boundaries of resolution in SRS microscopy, enabling more precise biological and chemical imaging than ever before.
@@ -47,7 +47,7 @@ Here, you can include an overview of:
 
 ~~~~bash
 git clone https://github.com/RogueLiquid/DeepSRS.git
-cd DeepRaman
+cd DeepSRS
 ~~~~
 
 2. **Create a virtual environment (optional but recommended)**:
