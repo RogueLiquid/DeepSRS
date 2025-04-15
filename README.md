@@ -75,6 +75,7 @@ Download the pretrained model weights from: [https://huggingface.co/datasets/Rog
 
 Organize the downloaded files as follows:
 
+```
 autoencoder/
   model/
     best_autoencoder_model.pth
@@ -87,6 +88,7 @@ ResShift/
 ESRGAN/
   weights/
     xxx.pth
+```
 
 ---
 
@@ -105,10 +107,10 @@ Use the following commands to perform super-resolution:
 
 ```bash
 # Run the autoencoder
-python run_autoencoder.py --input <input_tiff_folder> --output <output_tiff_folder>
+python run_autoencoder.py --tiff_input_path <input_tiff_folder> --output_path <output_tiff_folder> --model_path
 
 # Run the ESRGAN
-python run_ESRGAN.py --input <input_image_folder> --output <output_image_folder>
+python run_ESRGAN.py --in_path <input_image_folder> --out_path <output_image_folder>
 
 # Run the ResShift
 python run_ResShift.py --input <input_image_folder> --output <output_image_folder>
@@ -120,13 +122,13 @@ When run the test cases, please make sure you are in the DeepSRS folder.
 
 ```bash
 # Run the autoencoder
-python run_autoencoder.py --input <input_tiff_folder> --output <output_tiff_folder>
+python run_autoencoder.py --tiff_input_path <input_tiff_folder> --output_path <output_tiff_folder> --model_path
 
 # Run the ESRGAN
-python run_ESRGAN.py --input <input_image_folder> --output <output_image_folder>
+python run_ESRGAN.py --in_path <input_image_folder> --out_path <output_image_folder>
 
 # Run the ResShift
-python run_ResShift.py --input <input_image_folder> --output <output_image_folder>
+python run_ResShift.py --input test_data --output test_output
 ```
 
 ---
