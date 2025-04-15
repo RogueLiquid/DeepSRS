@@ -1,7 +1,6 @@
 # DeepSRS
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/RogueLiquid/DeepRaman/ci.yml?branch=main)](https://github.com/RogueLiquid/DeepRaman/actions)
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-green.svg)](https://www.python.org/downloads/)
 
 A research project leveraging deep learning for **Stimulated Raman Scattering (SRS) super-resolution**. DeepRaman aims to push the boundaries of resolution in SRS microscopy, enabling more precise biological and chemical imaging than ever before.
@@ -15,6 +14,12 @@ A research project leveraging deep learning for **Stimulated Raman Scattering (S
   - [Features](#features)
   - [Installation](#installation)
   - [Usage](#usage)
+    - [1. Prepare your SRS data](#1-prepare-your-srs-data)
+    - [2. Download model weights](#2-download-model-weights)
+    - [3. Run inference](#3-run-inference)
+- [Run the autoencoder](#run-the-autoencoder)
+- [Run the ESRGAN](#run-the-esrgan)
+- [Run the ResShift](#run-the-resshift)
   - [License](#license)
   - [References](#references)
   - [Contact](#contact)
@@ -70,26 +75,46 @@ pip install -r ResShift_requirements.txt
 ---
 
 ## Usage
-Provide instructions for how to run the primary scripts or functions of DeepSRS. For example:
 
-1. **Prepare your SRS data**:  
-   - Organize your SRS data into a folder, the data format is tiff (ends with .tif).
-   - Organize your processed data into a folder, the data format is png (ends with .png).
+Follow the steps below to run the primary scripts or functions of DeepSRS.
 
-2. **Inference**:
+### 1. Prepare your SRS data
 
-   - To run our program for super-resolution, you can:
+- Place your raw SRS data in a folder. The expected format is TIFF (.tif).
+- Place your processed image data in a folder. The expected format is PNG (.png).
 
-~~~~bash
-# Run the autoencoder:
+### 2. Download model weights
+
+Download the pretrained model weights from: [(https://huggingface.co/datasets/RogueLiquid/DeepSRS)]
+
+Organize the downloaded files as follows:
+
+autoencoder/
+├── model/
+│   └── best_autoencoder_model.pth
+
+ResShift/
+├── weights/
+│   ├── autoencoder_vq_f4.pth
+│   └── model_300.pth
+
+ESRGAN/
+├── weights/
+│   └── xxx.pth
+
+### 3. Run inference
+
+Use the following commands to perform super-resolution:
+
+```bash
+# Run the autoencoder
 python run_autoencoder.py --input <input_tiff_folder> --output <output_tiff_folder>
 
-# Run the ESRGAN:
+# Run the ESRGAN
 python run_ESRGAN.py --input <input_image_folder> --output <output_image_folder>
 
 # Run the ResShift
 python run_ResShift.py --input <input_image_folder> --output <output_image_folder>
-~~~~
 
 ---
 
